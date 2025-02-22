@@ -1,0 +1,128 @@
+:root {
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    --color-white: #fff;
+    --color-dark: #00171f;
+  }
+  
+  body {
+    background-image: linear-gradient(to bottom, #003459, #007ea7, #00a8e8, #fff);
+    background-repeat: no-repeat;
+  }
+  
+  .header {
+    grid-area: header;
+    font-size: 20px;
+    color: var(--color-white);
+    font-weight: 600;
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  .hero {
+    grid-area: hero;
+    margin-top: 200px;
+    color: var(--color-white);
+    z-index: 1;
+  }
+  
+  .hero h2 {
+    line-height: 1;
+    font-size: 40px;
+  }
+  
+  .hero p {
+    color: var(--color-dark);
+    font-size: 1.2rem;
+    line-height: 1.2;
+    margin-bottom: 40px;
+  }
+  
+  .hero a {
+    text-decoration: none;
+    background: var(--color-white);
+    max-width: fit-content;
+    padding: 10px 10px 10px 10px;
+    border-radius: 5px;
+    color: var(--color-dark);
+  }
+  
+  a:hover {
+    color: #007ea7;
+  }
+  
+  .card {
+    grid-area: card;
+    margin-top: 300px;
+    display: flex;
+    justify-content: center;
+    column-gap: 30px;
+  }
+  
+  .card .info {
+    text-align: start;
+    width: 40em;
+  }
+  
+  .card h1 {
+    font-weight: 500;
+  }
+  
+  img {
+    max-width: 90vh;
+    width: 40vh;
+    border-radius: 100%;
+  }
+  
+  li {
+    list-style: none;
+    display: inline;
+    margin-left: 20px;
+  }
+  p.card-footer {
+    margin-top: 133px;
+  }
+  main {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    text-align: center;
+    grid-template-rows: 30px 250px 300px auto;
+    grid-template-areas:
+      " header   header    header    "
+      " hero    hero    hero"
+      " card  card   card   ";
+  }
+  
+  @media screen and (max-width: 767px) {
+    main {
+      grid-template-columns: 1fr;
+      grid-template-rows: 100px auto repeat(1, 1fr);
+      grid-template-areas:
+        "header"
+        "hero"
+        "card"
+        "footer";
+    }
+    .hero {
+      margin-top: 5px;
+    }
+    .card {
+      display: block;
+      margin-top: 40px;
+    }
+    .card .info {
+      width: fit-content;
+    }
+    .hero h2 {
+      font-size: 35px;
+      line-height: 1.3;
+    }
+    li {
+      display: block;
+    }
+  
+    p.card-footer {
+      margin-top: 95px;
+      text-align: center;
+    }
+  }
+  
